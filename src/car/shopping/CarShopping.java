@@ -23,11 +23,12 @@ public class CarShopping
           totalCost += oSSystem();
           totalCost += aBS();
           totalCost += adjsPedals();
-          totalCost += horseAttach();
+          totalCost += jmsBondSecGuns();
           totalCost += ledLights();
-          System.out.println(totalCost);
-          //TODO: call methods that you write for each feature
-          //TODO: print the total cost of the vehicle
+          totalCost += tankArmor();
+          System.out.println("");
+          System.out.println("YOUR TOTAL COST IS: ");
+          System.out.println("* * * * "+totalCost+" * * * *");
       }
       else if(totalCost <= 0){
           System.out.println("You have not chosen a correct model, please try again...");
@@ -116,11 +117,11 @@ public class CarShopping
       }
    }
    
-   public static int horseAttach(){
-       System.out.print("Horse carriage attachement for $750 (horses not included)? (y/n) > ");
+   public static int jmsBondSecGuns(){
+       System.out.print("Secret James Bond weapons attached for $1000? (y/n) > ");
        char yesNo1 = (kb.nextLine()).charAt(0);
       if(yesNo1 == 'y'){
-          return 750;
+          return 1000;
       }
       else{
           return 0;
@@ -132,7 +133,21 @@ public class CarShopping
        char yesNo = (kb.nextLine()).charAt(0);
        System.out.print("What ");
       if(yesNo == 'y'){
-          return
+            return 800;
+        }
+      else{
+          return 0;
       }
+   }
+   
+   public static int tankArmor(){
+       System.out.print("Tank armor plates for $2000? (y/n) > ");
+       char yesNo = (kb.nextLine()).charAt(0);
+       if(yesNo == 'y'){
+           return 2000;
+       }
+       else{
+           return 0;
+       }
    }
 }

@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,20 +6,32 @@
  */
 package car.shopping;
 
-// Import Scanner Class
+import java.util.Scanner;
 
 public class CarShopping
 {
     
-    // Create static Scanner Object call it kb
+    static Scanner kb = new Scanner(System.in); 
 
    public static void main(String[] args)
    {
       int totalCost = 0;
       totalCost += base();
-      totalCost += automaticWindows();
-      //TODO: call methods that you write for each feature
-      //TODO: print the total cost of the vehicle
+      if(totalCost > 0){
+          totalCost += automaticWindows();
+          totalCost += noKey();
+          totalCost += oSSystem();
+          totalCost += aBS();
+          totalCost += adjsPedals();
+          totalCost += horseAttach();
+          totalCost += ledLights();
+          System.out.println(totalCost);
+          //TODO: call methods that you write for each feature
+          //TODO: print the total cost of the vehicle
+      }
+      else if(totalCost <= 0){
+          System.out.println("You have not chosen a correct model, please try again...");
+      }
    }
    
    public static int base()
@@ -30,14 +43,96 @@ public class CarShopping
        System.out.println("Which base model did the customer choose?"
                + "(enter full model name ex. Model 1): ");
       String model = kb.nextLine();
-      if(model.equalsIgnoreCase("Model 1"))
-         return 15000;
-      //...
+      if(model.equalsIgnoreCase("Model 1")){
+          return 15000;
+      }
+      
+      else if(model.equalsIgnoreCase("Model 2")){
+          return 24000;
+      }
+      
+      else if(model.equalsIgnoreCase("Model 3")){
+          return 40000;
+      }
+      
+      else{
+          return 0;  
+      }
    }
    
    public static int automaticWindows()
    {
       System.out.print("Automatic Windows for $500? (y/n) > ");
-      //...
+      char yesNo = (kb.nextLine()).charAt(0);
+      if(yesNo == 'y'){
+          return 500;
+      }
+      else{
+          return 0;
+      }
+   }
+   
+   public static int noKey(){
+       System.out.print("Remote Keyless entry for $1000? (y/n) > ");
+       char yesNo = (kb.nextLine()).charAt(0);
+      if(yesNo == 'y'){
+          return 1000;
+      }
+      else{
+          return 0;
+      }
+   }
+   
+   public static int oSSystem(){
+       System.out.print("OnStar System for $1000? (y/n) > ");
+       char yesNo1 = (kb.nextLine()).charAt(0);
+      if(yesNo1 == 'y'){
+          return 1000;
+      }
+      else{
+          return 0;
+      }
+   }
+   
+   public static int aBS(){
+       System.out.print("Anti-lock brakes for $500? (y/n) > ");
+       char yesNo1 = (kb.nextLine()).charAt(0);
+      if(yesNo1 == 'y'){
+          return 500;
+      }
+      else{
+          return 0;
+      }
+   }
+   
+   public static int adjsPedals(){
+       System.out.print("Telescoping steering/ adjustable pedals for $1000? (y/n) > ");
+       char yesNo1 = (kb.nextLine()).charAt(0);
+      if(yesNo1 == 'y'){
+          return 1000;
+      }
+      else{
+          return 0;
+      }
+   }
+   
+   public static int horseAttach(){
+       System.out.print("Horse carriage attachement for $750 (horses not included)? (y/n) > ");
+       char yesNo1 = (kb.nextLine()).charAt(0);
+      if(yesNo1 == 'y'){
+          return 750;
+      }
+      else{
+          return 0;
+      }
+   }
+   
+   public static int ledLights(){
+       System.out.print("Led Lights for $800? (y/n) > ");
+       char yesNo = (kb.nextLine()).charAt(0);
+       System.out.print("What ");
+      if(yesNo == 'y'){
+          return
+      }
    }
 }

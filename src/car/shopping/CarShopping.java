@@ -131,7 +131,6 @@ public class CarShopping
    public static int ledLights(){
        System.out.print("Led Lights for $800? (y/n) > ");
        char yesNo = (kb.nextLine()).charAt(0);
-       System.out.print("What ");
       if(yesNo == 'y'){
             return 800;
         }
